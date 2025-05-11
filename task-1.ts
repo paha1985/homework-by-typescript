@@ -1,9 +1,9 @@
-type PriceType = ({
-    price: number, 
-    discount: number, 
-    isInstallment: boolean, 
-    months: number
-})
+interface PriceType {
+    price: number;
+    discount: number;
+    isInstallment: boolean;
+    months: number;
+}
 
 const totalPrice = ({ price, discount, isInstallment, months }: PriceType): number => {
     const priceWithDiscount = price * (1 - discount / 100) / months;

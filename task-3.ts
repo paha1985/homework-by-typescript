@@ -1,8 +1,8 @@
 const COMMENTS_URL = 'https://jsonplaceholder.typicode.com/comments';
 
-type comment = {
-    id: number,
-    email: string,
+interface Comment {
+    id: number;
+    email: string;
 }
 
 const getData = async <T> (url: string): Promise<T> => {
@@ -10,7 +10,7 @@ const getData = async <T> (url: string): Promise<T> => {
   return await res.json() as T;
 }
 
-getData<comment[]>(COMMENTS_URL)
+getData<Comment[]>(COMMENTS_URL)
   .then(data => {
     data.forEach((d) => console.log(`ID: ${d.id}, Email: ${d.email}`))
   });

@@ -1,15 +1,15 @@
-type Post = {
+interface Post {
     id: string;
     title: string;
     body: string;
   }
 
-  type byIdType = {
+  interface byIdType {
     id:string,
     
   }
 
-  type NormalizedData<T> = {
+  interface NormalizedData<T> {
     byId: { [id: string]: T };
     allIds: string[];
   }
